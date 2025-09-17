@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalEcom Services - 跨境电商服务</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 替换为生产环境的Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -40,13 +41,15 @@
             }
         }
     </style>
+    <!-- 预加载Font Awesome字体 -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
 </head>
 <body class="font-sans text-dark bg-light">
-    <!-- 导航栏（修复路径：适配kjds仓库） -->
+    <!-- 导航栏 -->
     <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo 链接：指向仓库根目录的index.html -->
+                <!-- Logo 链接 -->
                 <a href="https://zhaoyawei100.github.io/kjds/index.html" class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                         <i class="fa fa-globe text-white text-xl"></i>
@@ -54,7 +57,7 @@
                     <span class="text-xl font-bold text-primary" data-i18n="logo">GlobalEcom Services</span>
                 </a>
                 
-                <!-- 桌面导航（所有锚点添加仓库路径前缀） -->
+                <!-- 桌面导航 -->
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="https://zhaoyawei100.github.io/kjds/index.html#home" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
                     <a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
@@ -75,7 +78,7 @@
             </div>
         </div>
         
-        <!-- 移动端导航菜单（修复锚点路径） -->
+        <!-- 移动端导航菜单 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="container mx-auto px-4 py-3 space-y-3">
                 <a href="https://zhaoyawei100.github.io/kjds/index.html#home" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
@@ -90,7 +93,7 @@
         </div>
     </header>
     <main>
-        <!-- 英雄区域（修复按钮链接） -->
+        <!-- 英雄区域 -->
         <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row items-center">
@@ -118,7 +121,7 @@
                 </div>
             </div>
         </section>
-        <!-- 服务优势（无路径依赖，保持不变） -->
+        <!-- 服务优势 -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -158,7 +161,7 @@
                 </div>
             </div>
         </section>
-        <!-- 服务内容（修复"了解更多"链接） -->
+        <!-- 服务内容 -->
         <section id="services" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -341,7 +344,7 @@
                 </div>
             </div>
         </section>
-        <!-- 关于我们（修复"联系我们"按钮链接） -->
+        <!-- 关于我们 -->
         <section id="about" class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -394,7 +397,7 @@
                 </div>
             </div>
         </section>
-        <!-- 联系我们（第三方表单已修复HTTPS，适配GitHub Pages） -->
+        <!-- 联系我们 -->
         <section id="contact" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -405,7 +408,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
                         <div class="bg-white rounded-xl shadow-lg p-8 h-full">
-                            <!-- 第三方表单（HTTPS协议，适配GitHub Pages安全策略） -->
+                            <!-- 修复混合内容问题：使用HTTPS链接 -->
                             <script charset="UTF-8" defer>(function(m){function n(b){return null===b?null:b.scrollHeight>b.clientHeight?b:n(b.parentNode)}function u(b){if(b.data&&"[object String]"==Object.prototype.toString.call(b.data)){var e={};try{e=JSON.parse(b.data)}catch(v){}!e.height||p||q||(d.style.height=+e.height+"px");if(e.getter){b={};e=[].concat(e.getter);var k,w=e.length;for(k=0;k<w;k++){var r=k;var c=e[k]||{};c.n&&(r=c.n);var g=null;try{switch(c.t){case "window":var f=window;break;case "scrollParent":f=n(a)||window;break;default:f=a}if(c.e)if("rect"===c.v){g={};var l=f.getBoundingClientRect();g={top:l.top,left:l.left,width:l.width,height:l.height}}else g=f[c.v].apply(f,[].concat(c.e))||!0;else c.s?(f[c.v]=c.s,g=!0):g=f[c.v]||!1}catch(v){}b[r]=g}b.innerState=!p&&!q;a.contentWindow.postMessage(JSON.stringify({queryRes:b}),"*")}}}for(var t=m.document,h=t.documentElement;h.childNodes.length&&1==h.lastChild.nodeType;)h=h.lastChild;var d=h.parentNode,a=t.createElement("iframe");d.style.overflowY="auto";d.style.overflowX="hidden";var p=d.style.height&&"auto"!==d.style.height,q="absolute"===d.style.position||window.getComputedStyle&&"absolute"===window.getComputedStyle(d,null).getPropertyValue("position")||d.currentStyle&&"absolute"===d.currentStyle.position;m.addEventListener&&m.addEventListener("message",u,!1);a.src="https://xiaoyuan100.mikecrm.com/3eEGmgR";a.id="mkin3eEGmgR";a.onload=function(){a.contentWindow.postMessage(JSON.stringify({cif:1}),"*")};a.frameBorder=0;a.scrolling="no";a.style.display="block";a.style.minWidth="100%";a.style.width="100px";a.style.height="100%";a.style.border="none";a.style.overflow="auto";d.insertBefore(a,h)})(window);</script>
                         </div>
                     </div>
@@ -467,7 +470,7 @@
             </div>
         </section>
     </main>
-    <!-- 页脚（修复所有导航链接） -->
+    <!-- 页脚 -->
     <footer class="bg-dark text-white pt-16 pb-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -550,13 +553,13 @@
             </div>
         </div>
     </footer>
-    <!-- 回到顶部按钮（功能不变） -->
+    <!-- 回到顶部按钮 -->
     <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
         <i class="fa fa-arrow-up"></i>
     </button>
-    <!-- 语言切换与交互脚本（修复平滑滚动目标路径） -->
+    <!-- 语言切换与交互脚本 -->
     <script>
-        // 语言翻译数据（保持不变）
+        // 语言翻译数据
         const translations = {
             zh: {
                 "logo": "GlobalEcom Services",
@@ -703,7 +706,7 @@
         };
         // 当前语言
         let currentLang = 'zh';
-        // 切换语言（功能不变）
+        // 切换语言
         function changeLanguage(lang) {
             if (lang === currentLang) return;
             currentLang = lang;
@@ -721,7 +724,7 @@
                 }
             });
         }
-        // 导航栏滚动效果（功能不变）
+        // 导航栏滚动效果
         function handleNavbarScroll() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -740,7 +743,7 @@
                 backToTop.classList.remove('opacity-100', 'visible');
             }
         }
-        // 平滑滚动（适配GitHub Pages路径，直接定位ID）
+        // 平滑滚动
         function smoothScroll(targetId) {
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
@@ -751,7 +754,7 @@
                 document.getElementById('mobile-menu').classList.add('hidden');
             }
         }
-        // 初始化事件监听（修复语言切换和菜单按钮事件）
+        // 初始化事件监听
         function initEventListeners() {
             // 语言切换按钮
             document.getElementById('lang-zh').addEventListener('click', () => changeLanguage('zh'));
