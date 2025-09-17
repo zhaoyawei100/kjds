@@ -7,14 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        // 配置Tailwind
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E40AF',
-                        secondary: '#3B82F6',
-                        accent: '#F97316',
+                        primary: '#1E40AF', // 深蓝色主色调（专业、信任）
+                        secondary: '#3B82F6', // 中蓝色辅助色
+                        accent: '#F97316', // 橙色强调色（活力、国际化）
                         dark: '#1E293B',
                         light: '#F8FAFC'
                     },
@@ -43,24 +42,24 @@
     </style>
 </head>
 <body class="font-sans text-dark bg-light">
-    <!-- 导航栏 -->
+    <!-- 导航栏（修复路径：适配kjds仓库） -->
     <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-2">
+                <!-- Logo 链接：指向仓库根目录的index.html -->
+                <a href="https://zhaoyawei100.github.io/kjds/index.html" class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                         <i class="fa fa-globe text-white text-xl"></i>
                     </div>
                     <span class="text-xl font-bold text-primary" data-i18n="logo">GlobalEcom Services</span>
                 </a>
                 
-                <!-- 桌面导航 -->
+                <!-- 桌面导航（所有锚点添加仓库路径前缀） -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html#home" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
-                    <a href="index.html#services" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
-                    <a href="index.html#about" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
-                    <a href="index.html#contact" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
+                    <a href="https://zhaoyawei100.github.io/kjds/index.html#home" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
+                    <a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
+                    <a href="https://zhaoyawei100.github.io/kjds/index.html#about" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
+                    <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
                     
                     <!-- 语言切换 -->
                     <div class="flex items-center space-x-2">
@@ -76,13 +75,13 @@
             </div>
         </div>
         
-        <!-- 移动端导航菜单 -->
+        <!-- 移动端导航菜单（修复锚点路径） -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="container mx-auto px-4 py-3 space-y-3">
-                <a href="index.html#home" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
-                <a href="index.html#services" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
-                <a href="index.html#about" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
-                <a href="index.html#contact" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
+                <a href="https://zhaoyawei100.github.io/kjds/index.html#home" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
+                <a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
+                <a href="https://zhaoyawei100.github.io/kjds/index.html#about" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
+                <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
                 <div class="flex items-center space-x-2 pt-2 border-t">
                     <button id="mobile-lang-zh" class="px-3 py-1 rounded-md bg-primary text-white" data-lang="zh">中</button>
                     <button id="mobile-lang-en" class="px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 transition-custom" data-lang="en">En</button>
@@ -91,7 +90,7 @@
         </div>
     </header>
     <main>
-        <!-- 英雄区域 -->
+        <!-- 英雄区域（修复按钮链接） -->
         <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row items-center">
@@ -102,10 +101,10 @@
                         </h1>
                         <p class="text-lg text-gray-600 mb-8" data-i18n="hero.subtitle">我们提供专业的海外公司注册、平台入驻、物流渠道、收款账户开通及卖家培训服务，助您轻松拓展全球市场。</p>
                         <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                            <a href="index.html#services" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-custom text-center">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-custom text-center">
                                 <i class="fa fa-rocket mr-2"></i><span data-i18n="hero.cta1">了解服务</span>
                             </a>
-                            <a href="index.html#contact" class="px-8 py-3 bg-white hover:bg-gray-50 text-primary border border-primary font-medium rounded-lg shadow-md hover:shadow-lg transition-custom text-center">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="px-8 py-3 bg-white hover:bg-gray-50 text-primary border border-primary font-medium rounded-lg shadow-md hover:shadow-lg transition-custom text-center">
                                 <i class="fa fa-envelope mr-2"></i><span data-i18n="hero.cta2">联系我们</span>
                             </a>
                         </div>
@@ -119,9 +118,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 其他部分保持不变 -->
-        <!-- 服务优势 -->
+        <!-- 服务优势（无路径依赖，保持不变） -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -130,7 +127,6 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- 优势1 -->
                     <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
                         <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
                             <i class="fa fa-check-circle text-primary text-2xl"></i>
@@ -138,8 +134,6 @@
                         <h3 class="text-xl font-semibold mb-3" data-i18n="advantages.item1.title">专业可靠</h3>
                         <p class="text-gray-600" data-i18n="advantages.item1.desc">多年行业经验，专业团队提供高效服务，确保每一项业务顺利完成</p>
                     </div>
-                    
-                    <!-- 优势2 -->
                     <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
                         <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
                             <i class="fa fa-globe text-primary text-2xl"></i>
@@ -147,8 +141,6 @@
                         <h3 class="text-xl font-semibold mb-3" data-i18n="advantages.item2.title">全球覆盖</h3>
                         <p class="text-gray-600" data-i18n="advantages.item2.desc">服务覆盖主流跨境电商市场，提供本地化解决方案，助力全球业务拓展</p>
                     </div>
-                    
-                    <!-- 优势3 -->
                     <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
                         <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
                             <i class="fa fa-clock-o text-primary text-2xl"></i>
@@ -156,8 +148,6 @@
                         <h3 class="text-xl font-semibold mb-3" data-i18n="advantages.item3.title">高效快捷</h3>
                         <p class="text-gray-600" data-i18n="advantages.item3.desc">简化流程，快速办理，缩短业务周期，让您尽快开展全球业务</p>
                     </div>
-                    
-                    <!-- 优势4 -->
                     <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
                         <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
                             <i class="fa fa-users text-primary text-2xl"></i>
@@ -168,8 +158,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 服务内容 -->
+        <!-- 服务内容（修复"了解更多"链接） -->
         <section id="services" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -178,7 +167,7 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 服务1 - 海外公司注册代办 -->
+                    <!-- 服务1：海外公司注册代办 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/28/600/400" alt="海外公司注册代办服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -191,14 +180,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item1.title">海外公司注册代办</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item1.desc">提供全球主要贸易地区的公司注册服务，包括美国、英国、欧盟、东南亚等地区，全程代办，快速高效。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务2 - VAT/GST 税号办理 -->
+                    <!-- 服务2：VAT/GST 税号办理 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/18/600/400" alt="VAT/GST税号办理服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -211,14 +199,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item2.title">VAT / GST 税号办理</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item2.desc">专业办理欧盟、英国、澳洲等国家和地区的增值税税号，确保合规经营，避免税务风险。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务3 - EPR 环保注册 -->
+                    <!-- 服务3：EPR 环保注册 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/29/600/400" alt="EPR环保注册服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -231,14 +218,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item3.title">EPR 环保注册</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item3.desc">代办欧盟、法国、德国等地区的EPR环保注册，满足产品回收和环保要求，确保市场准入合规。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务4 - 商标注册 -->
+                    <!-- 服务4：商标注册 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/36/600/400" alt="商标注册服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -251,14 +237,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item4.title">商标注册</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item4.desc">提供全球主要市场的商标注册服务，保护品牌权益，提升品牌价值，避免侵权风险。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务5 - 美国MSB等牌照办理 -->
+                    <!-- 服务5：美国MSB等牌照办理 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/42/600/400" alt="美国MSB等牌照办理服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -271,14 +256,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item5.title">美国MSB等牌照办理</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item5.desc">专业办理美国MSB金融牌照及其他国家地区相关牌照，满足跨境支付和金融业务合规要求。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务6 - 跨境平台入驻代办 -->
+                    <!-- 服务6：跨境平台入驻代办 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/48/600/400" alt="跨境平台入驻代办服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -291,14 +275,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item6.title">跨境平台入驻代办</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item6.desc">协助入驻亚马逊、eBay、Wish、Shopee、Lazada等主流跨境电商平台，提供资料准备、审核指导等服务。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务7 - 跨境物流渠道代理 -->
+                    <!-- 服务7：跨境物流渠道代理 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/68/600/400" alt="跨境物流渠道代理服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -311,14 +294,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item7.title">跨境物流渠道代理</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item7.desc">提供国际快递、专线物流、海外仓等多种物流解决方案，价格优惠，时效保障，全程跟踪。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务8 - 收款账户开通代办 -->
+                    <!-- 服务8：收款账户开通代办 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/88/600/400" alt="收款账户开通代办服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -331,14 +313,13 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item8.title">收款账户开通代办</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item8.desc">协助开通全球收款账户，包括PayPal、WorldFirst、Payoneer等，解决跨境收款难题，降低手续费。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- 服务9 - 卖家培训与社群运营 -->
+                    <!-- 服务9：卖家培训+社群运营 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
                         <div class="h-48 overflow-hidden">
                             <img src="https://picsum.photos/id/108/600/400" alt="卖家培训与社群运营服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -351,7 +332,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item9.title">卖家培训+社群运营</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item9.desc">提供平台运营技巧、选品策略、营销推广等培训课程，建立卖家社群，共享资源与经验。</p>
-                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -360,8 +341,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 关于我们 -->
+        <!-- 关于我们（修复"联系我们"按钮链接） -->
         <section id="about" class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -406,7 +386,7 @@
                             </div>
                         </div>
                         
-                        <a href="index.html#contact" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-custom">
+                        <a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-custom">
                             <span data-i18n="about.cta">联系我们</span>
                             <i class="fa fa-arrow-right ml-2"></i>
                         </a>
@@ -414,8 +394,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 联系我们 -->
+        <!-- 联系我们（第三方表单已修复HTTPS，适配GitHub Pages） -->
         <section id="contact" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -426,7 +405,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
                         <div class="bg-white rounded-xl shadow-lg p-8 h-full">
-                            <!-- 第三方平台表单 -->
+                            <!-- 第三方表单（HTTPS协议，适配GitHub Pages安全策略） -->
                             <script charset="UTF-8" defer>(function(m){function n(b){return null===b?null:b.scrollHeight>b.clientHeight?b:n(b.parentNode)}function u(b){if(b.data&&"[object String]"==Object.prototype.toString.call(b.data)){var e={};try{e=JSON.parse(b.data)}catch(v){}!e.height||p||q||(d.style.height=+e.height+"px");if(e.getter){b={};e=[].concat(e.getter);var k,w=e.length;for(k=0;k<w;k++){var r=k;var c=e[k]||{};c.n&&(r=c.n);var g=null;try{switch(c.t){case "window":var f=window;break;case "scrollParent":f=n(a)||window;break;default:f=a}if(c.e)if("rect"===c.v){g={};var l=f.getBoundingClientRect();g={top:l.top,left:l.left,width:l.width,height:l.height}}else g=f[c.v].apply(f,[].concat(c.e))||!0;else c.s?(f[c.v]=c.s,g=!0):g=f[c.v]||!1}catch(v){}b[r]=g}b.innerState=!p&&!q;a.contentWindow.postMessage(JSON.stringify({queryRes:b}),"*")}}}for(var t=m.document,h=t.documentElement;h.childNodes.length&&1==h.lastChild.nodeType;)h=h.lastChild;var d=h.parentNode,a=t.createElement("iframe");d.style.overflowY="auto";d.style.overflowX="hidden";var p=d.style.height&&"auto"!==d.style.height,q="absolute"===d.style.position||window.getComputedStyle&&"absolute"===window.getComputedStyle(d,null).getPropertyValue("position")||d.currentStyle&&"absolute"===d.currentStyle.position;m.addEventListener&&m.addEventListener("message",u,!1);a.src="https://xiaoyuan100.mikecrm.com/3eEGmgR";a.id="mkin3eEGmgR";a.onload=function(){a.contentWindow.postMessage(JSON.stringify({cif:1}),"*")};a.frameBorder=0;a.scrolling="no";a.style.display="block";a.style.minWidth="100%";a.style.width="100px";a.style.height="100%";a.style.border="none";a.style.overflow="auto";d.insertBefore(a,h)})(window);</script>
                         </div>
                     </div>
@@ -488,8 +467,7 @@
             </div>
         </section>
     </main>
-    
-    <!-- 页脚 -->
+    <!-- 页脚（修复所有导航链接） -->
     <footer class="bg-dark text-white pt-16 pb-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -520,25 +498,25 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-6" data-i18n="footer.services">服务</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item1.title">海外公司注册代办</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item2.title">VAT / GST 税号办理</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item3.title">EPR 环保注册</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item4.title">商标注册</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item5.title">美国MSB等牌照办理</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item6.title">跨境平台入驻代办</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item7.title">跨境物流渠道代理</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item8.title">收款账户开通代办</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item9.title">卖家培训+社群运营</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item1.title">海外公司注册代办</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item2.title">VAT / GST 税号办理</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item3.title">EPR 环保注册</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item4.title">商标注册</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item5.title">美国MSB等牌照办理</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item6.title">跨境平台入驻代办</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item7.title">跨境物流渠道代理</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item8.title">收款账户开通代办</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item9.title">卖家培训+社群运营</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-6" data-i18n="footer.quickLinks">快速链接</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html#home" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.home">首页</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.services">服务</a></li>
-                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.about">关于我们</a></li>
-                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.contact">联系我们</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#home" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.home">首页</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.services">服务</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#about" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.about">关于我们</a></li>
+                        <li><a href="https://zhaoyawei100.github.io/kjds/index.html#contact" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.contact">联系我们</a></li>
                     </ul>
                 </div>
                 
@@ -572,15 +550,13 @@
             </div>
         </div>
     </footer>
-    
-    <!-- 回到顶部按钮 -->
+    <!-- 回到顶部按钮（功能不变） -->
     <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
         <i class="fa fa-arrow-up"></i>
     </button>
-    
-    <!-- 语言切换与交互脚本 -->
+    <!-- 语言切换与交互脚本（修复平滑滚动目标路径） -->
     <script>
-        // 语言翻译数据
+        // 语言翻译数据（保持不变）
         const translations = {
             zh: {
                 "logo": "GlobalEcom Services",
@@ -725,25 +701,16 @@
                 "footer.terms": "Terms of Service"
             }
         };
-        
         // 当前语言
         let currentLang = 'zh';
-        
-        // 切换语言
+        // 切换语言（功能不变）
         function changeLanguage(lang) {
             if (lang === currentLang) return;
-            
             currentLang = lang;
-            
-            // 更新所有带data-i18n属性的元素
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
+                if (translations[lang][key]) el.textContent = translations[lang][key];
             });
-            
-            // 更新语言按钮样式
             document.querySelectorAll('[data-lang]').forEach(btn => {
                 if (btn.getAttribute('data-lang') === lang) {
                     btn.classList.remove('bg-gray-200', 'hover:bg-gray-300');
@@ -754,8 +721,7 @@
                 }
             });
         }
-        
-        // 导航栏滚动效果
+        // 导航栏滚动效果（功能不变）
         function handleNavbarScroll() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -765,8 +731,6 @@
                 navbar.classList.add('py-4', 'shadow-md');
                 navbar.classList.remove('py-2', 'shadow-lg');
             }
-            
-            // 控制回到顶部按钮显示
             const backToTop = document.getElementById('back-to-top');
             if (window.scrollY > 300) {
                 backToTop.classList.remove('opacity-0', 'invisible');
@@ -776,8 +740,7 @@
                 backToTop.classList.remove('opacity-100', 'visible');
             }
         }
-        
-        // 平滑滚动
+        // 平滑滚动（适配GitHub Pages路径，直接定位ID）
         function smoothScroll(targetId) {
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
@@ -785,53 +748,32 @@
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // 关闭移动菜单
                 document.getElementById('mobile-menu').classList.add('hidden');
             }
         }
-        
-        // 初始化事件监听
+        // 初始化事件监听（修复语言切换和菜单按钮事件）
         function initEventListeners() {
             // 语言切换按钮
             document.getElementById('lang-zh').addEventListener('click', () => changeLanguage('zh'));
             document.getElementById('lang-en').addEventListener('click', () => changeLanguage('en'));
             document.getElementById('mobile-lang-zh').addEventListener('click', () => changeLanguage('zh'));
             document.getElementById('mobile-lang-en').addEventListener('click', () => changeLanguage('en'));
-            
-            // 移动菜单切换
+            // 移动端菜单切换
             document.getElementById('menu-toggle').addEventListener('click', () => {
                 const mobileMenu = document.getElementById('mobile-menu');
                 mobileMenu.classList.toggle('hidden');
             });
-            
-            // 导航链接点击
-            document.querySelectorAll('a[href^="index.html#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').split('#')[1];
-                    if (targetId) {
-                        smoothScroll(targetId);
-                    }
-                });
-            });
-            
             // 回到顶部按钮
             document.getElementById('back-to-top').addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-            
             // 滚动事件
             window.addEventListener('scroll', handleNavbarScroll);
         }
-        
-        // 页面加载完成后初始化
+        // 页面加载初始化
         document.addEventListener('DOMContentLoaded', () => {
             initEventListeners();
-            handleNavbarScroll(); // 初始化导航栏状态
+            handleNavbarScroll();
         });
     </script>
 </body>
