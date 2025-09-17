@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalEcom Services - 跨境电商服务</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF', // 深蓝色作为主色调，代表专业和信任
+                        secondary: '#3B82F6', // 中蓝色作为辅助色
+                        accent: '#F97316', // 橙色作为强调色，代表活力和国际化
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .bg-gradient-blue {
+                background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-light">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <i class="fa fa-globe text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-primary" data-i18n="logo">GlobalEcom Services</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
+                    <a href="#services" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
+                    <a href="#about" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
+                    <a href="#contact" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
+                    
+                    <!-- 语言切换 -->
+                    <div class="flex items-center space-x-2">
+                        <button id="lang-zh" class="px-3 py-1 rounded-md bg-primary text-white" data-lang="zh">中</button>
+                        <button id="lang-en" class="px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 transition-custom" data-lang="en">En</button>
+                    </div>
+                </nav>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-dark hover:text-primary">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#home" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
+                <a href="#services" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
+                <a href="#about" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
+                <a href="#contact" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
+                <div class="flex items-center space-x-2 pt-2 border-t">
+                    <button id="mobile-lang-zh" class="px-3 py-1 rounded-md bg-primary text-white" data-lang="zh">中</button>
+                    <button id="mobile-lang-en" class="px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 transition-custom" data-lang="en">En</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 英雄区域 -->
+        <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-12 mb-10 md:mb-0">
+                        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-6 text-shadow">
+                            <span data-i18n="hero.title1">一站式跨境电商</span><br>
+                            <span class="text-primary" data-i18n="hero.title2">解决方案</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8" data-i18n="hero.subtitle">我们提供专业的海外公司注册、平台入驻、物流渠道、收款账户开通及卖家培训服务，助您轻松拓展全球市场。</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#services" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-custom text-center">
+                                <i class="fa fa-rocket mr-2"></i><span data-i18n="hero.cta1">了解服务</span>
+                            </a>
+                            <a href="#contact" class="px-8 py-3 bg-white hover:bg-gray-50 text-primary border border-primary font-medium rounded-lg shadow-md hover:shadow-lg transition-custom text-center">
+                                <i class="fa fa-envelope mr-2"></i><span data-i18n="hero.cta2">联系我们</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-primary/10 rounded-2xl transform rotate-3"></div>
+                            <img src="https://picsum.photos/id/180/600/400" alt="跨境电商全球业务示意图" class="relative rounded-xl shadow-xl w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务优势 -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4" data-i18n="advantages.title">为什么选择我们</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-i18n="advantages.subtitle">多年跨境电商服务经验，专业团队为您提供全方位支持，让您的全球业务拓展之路更加顺畅</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 优势1 -->
+                    <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                            <i class="fa fa-check-circle text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3" data-i18n="advantages.item1.title">专业可靠</h3>
+                        <p class="text-gray-600" data-i18n="advantages.item1.desc">多年行业经验，专业团队提供高效服务，确保每一项业务顺利完成</p>
+                    </div>
+                    
+                    <!-- 优势2 -->
+                    <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                            <i class="fa fa-globe text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3" data-i18n="advantages.item2.title">全球覆盖</h3>
+                        <p class="text-gray-600" data-i18n="advantages.item2.desc">服务覆盖主流跨境电商市场，提供本地化解决方案，助力全球业务拓展</p>
+                    </div>
+                    
+                    <!-- 优势3 -->
+                    <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                            <i class="fa fa-clock-o text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3" data-i18n="advantages.item3.title">高效快捷</h3>
+                        <p class="text-gray-600" data-i18n="advantages.item3.desc">简化流程，快速办理，缩短业务周期，让您尽快开展全球业务</p>
+                    </div>
+                    
+                    <!-- 优势4 -->
+                    <div class="bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom border border-blue-100">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                            <i class="fa fa-users text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3" data-i18n="advantages.item4.title">全程支持</h3>
+                        <p class="text-gray-600" data-i18n="advantages.item4.desc">从前期准备到后期运营，提供全程一对一服务，解决您的后顾之忧</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务内容 -->
+        <section id="services" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4" data-i18n="services.title">我们的服务</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-i18n="services.subtitle">提供全方位跨境电商解决方案，助力您的业务走向全球</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 服务1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/id/28/600/400" alt="海外公司注册代办服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-building text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-i18n="services.item1.title">海外公司注册代办</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-i18n="services.item1.desc">提供全球主要贸易地区的公司注册服务，包括美国、英国、欧盟、东南亚等地区，全程代办，快速高效。</p>
+                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                                <span data-i18n="services.learnMore">了解更多</span>
+                                <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/id/48/600/400" alt="跨境平台入驻代办服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-shopping-cart text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-i18n="services.item2.title">跨境平台入驻代办</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-i18n="services.item2.desc">协助入驻亚马逊、eBay、Wish、Shopee、Lazada等主流跨境电商平台，提供资料准备、审核指导等服务。</p>
+                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                                <span data-i18n="services.learnMore">了解更多</span>
+                                <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/id/68/600/400" alt="跨境物流渠道代理服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-truck text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-i18n="services.item3.title">跨境物流渠道代理</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-i18n="services.item3.desc">提供国际快递、专线物流、海外仓等多种物流解决方案，价格优惠，时效保障，全程跟踪。</p>
+                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                                <span data-i18n="services.learnMore">了解更多</span>
+                                <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/id/88/600/400" alt="收款账户开通代办服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-credit-card text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-i18n="services.item4.title">收款账户开通代办</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-i18n="services.item4.desc">协助开通全球收款账户，包括PayPal、WorldFirst、Payoneer等，解决跨境收款难题，降低手续费。</p>
+                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                                <span data-i18n="services.learnMore">了解更多</span>
+                                <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务5 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/id/108/600/400" alt="卖家培训与社群运营服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-graduation-cap text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-i18n="services.item5.title">卖家培训+社群运营</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-i18n="services.item5.desc">提供平台运营技巧、选品策略、营销推广等培训课程，建立卖家社群，共享资源与经验。</p>
+                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                                <span data-i18n="services.learnMore">了解更多</span>
+                                <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务6 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://picsum.photos/id/128/600/400" alt="其他跨境电商相关服务" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-cogs text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold" data-i18n="services.item6.title">其他增值服务</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4" data-i18n="services.item6.desc">提供商标注册、VAT税务登记、产品认证、店铺代运营等增值服务，满足您的多样化需求。</p>
+                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                                <span data-i18n="services.learnMore">了解更多</span>
+                                <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我们 -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-primary/5 rounded-2xl -rotate-2"></div>
+                            <img src="https://picsum.photos/id/160/600/400" alt="我们的团队" class="relative rounded-xl shadow-xl w-full h-auto">
+                            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs">
+                                <div class="flex items-center mb-2">
+                                    <div class="flex -space-x-2">
+                                        <img src="https://picsum.photos/id/1001/100/100" alt="团队成员" class="w-10 h-10 rounded-full border-2 border-white">
+                                        <img src="https://picsum.photos/id/1002/100/100" alt="团队成员" class="w-10 h-10 rounded-full border-2 border-white">
+                                        <img src="https://picsum.photos/id/1003/100/100" alt="团队成员" class="w-10 h-10 rounded-full border-2 border-white">
+                                        <div class="w-10 h-10 rounded-full border-2 border-white bg-primary text-white flex items-center justify-center text-sm font-medium">+8</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600" data-i18n="about.teamDesc">专业团队，多年跨境电商服务经验</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-6" data-i18n="about.title">关于我们</h2>
+                        <p class="text-gray-600 mb-4 text-lg" data-i18n="about.p1">GlobalEcom Services 是一家专注于为跨境电商卖家提供全方位服务的专业机构。我们拥有一支经验丰富的团队，熟悉全球主要电商市场的规则和运营模式。</p>
+                        <p class="text-gray-600 mb-6 text-lg" data-i18n="about.p2">自成立以来，我们已帮助数千家企业成功拓展海外市场，提供从公司注册、平台入驻到物流配送、收款结算的一站式解决方案，让跨境电商业务变得简单高效。</p>
+                        
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-1">5000+</div>
+                                <p class="text-gray-600" data-i18n="about.stats.clients">服务客户</p>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-1">10+</div>
+                                <p class="text-gray-600" data-i18n="about.stats.years">行业经验</p>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-1">20+</div>
+                                <p class="text-gray-600" data-i18n="about.stats.countries">覆盖国家</p>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary mb-1">98%</div>
+                                <p class="text-gray-600" data-i18n="about.stats.satisfaction">客户满意度</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-custom">
+                            <span data-i18n="about.cta">联系我们</span>
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们 -->
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4" data-i18n="contact.title">联系我们</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-i18n="contact.subtitle">无论您有任何疑问或需求，都可以通过以下方式联系我们，我们将尽快回复您</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <div class="bg-white rounded-xl shadow-lg p-8 h-full">
+                            <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.formTitle">发送消息</h3>
+                            <form id="contact-form" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2" data-i18n="contact.name">姓名</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="请输入您的姓名">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2" data-i18n="contact.email">邮箱</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="请输入您的邮箱">
+                                </div>
+                                <div>
+                                    <label for="service" class="block text-gray-700 font-medium mb-2" data-i18n="contact.service">感兴趣的服务</label>
+                                    <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom">
+                                        <option value="" data-i18n="contact.selectService">请选择服务类型</option>
+                                        <option value="company-registration" data-i18n="services.item1.title">海外公司注册代办</option>
+                                        <option value="platform-entry" data-i18n="services.item2.title">跨境平台入驻代办</option>
+                                        <option value="logistics" data-i18n="services.item3.title">跨境物流渠道代理</option>
+                                        <option value="payment-account" data-i18n="services.item4.title">收款账户开通代办</option>
+                                        <option value="training" data-i18n="services.item5.title">卖家培训+社群运营</option>
+                                        <option value="other" data-i18n="services.item6.title">其他增值服务</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-gray-700 font-medium mb-2" data-i18n="contact.message">留言</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="请输入您的需求或疑问"></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-custom">
+                                    <i class="fa fa-paper-plane mr-2"></i><span data-i18n="contact.send">发送消息</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                            <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.contactInfo">联系方式</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                        <i class="fa fa-envelope text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.email">邮箱</h4>
+                                        <p class="text-gray-600">452231850@qq.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                        <i class="fa fa-weixin text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.wechat">微信</h4>
+                                        <p class="text-gray-600">452231850</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                        <i class="fa fa-paper-plane text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.telegram">Telegram</h4>
+                                        <p class="text-gray-600">@willton100</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-lg p-8">
+                            <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.workingHours">工作时间</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600" data-i18n="contact.mondayToFriday">周一至周五</span>
+                                    <span class="font-medium">9:00 - 18:00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600" data-i18n="contact.saturday">周六</span>
+                                    <span class="font-medium">10:00 - 16:00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600" data-i18n="contact.sunday">周日</span>
+                                    <span class="font-medium text-gray-500" data-i18n="contact.closed">休息</span>
+                                </div>
+                            </div>
+                            <p class="mt-6 text-gray-600" data-i18n="contact.responseTime">我们通常会在24小时内回复您的咨询</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fa fa-globe text-primary text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold" data-i18n="logo">GlobalEcom Services</span>
+                    </div>
+                    <p class="text-gray-400 mb-6" data-i18n="footer.desc">专业的跨境电商一站式服务提供商，助力您的业务拓展全球市场。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6" data-i18n="footer.services">服务</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item1.title">海外公司注册代办</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item2.title">跨境平台入驻代办</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item3.title">跨境物流渠道代理</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item4.title">收款账户开通代办</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item5.title">卖家培训+社群运营</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6" data-i18n="footer.quickLinks">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.home">首页</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.services">服务</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.about">关于我们</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.contact">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6" data-i18n="footer.contact">联系我们</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">452231850@qq.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-weixin text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">452231850</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-paper-plane text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">@willton100</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0" data-i18n="footer.copyright">© 2023 GlobalEcom Services. 保留所有权利。</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-gray-400 text-sm" data-i18n="footer.privacy">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-400 text-sm" data-i18n="footer.terms">服务条款</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- 成功提交消息 -->
+    <div id="success-message" class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-4 rounded-lg shadow-xl opacity-0 invisible transition-all duration-300 z-50">
+        <p data-i18n="contact.success">您的消息已成功发送，我们将尽快回复您！</p>
+    </div>
+
+    <script>
+        // 语言翻译数据
+        const translations = {
+            zh: {
+                "logo": "GlobalEcom Services",
+                "nav.home": "首页",
+                "nav.services": "服务",
+                "nav.about": "关于我们",
+                "nav.contact": "联系我们",
+                "hero.title1": "一站式跨境电商",
+                "hero.title2": "解决方案",
+                "hero.subtitle": "我们提供专业的海外公司注册、平台入驻、物流渠道、收款账户开通及卖家培训服务，助您轻松拓展全球市场。",
+                "hero.cta1": "了解服务",
+                "hero.cta2": "联系我们",
+                "advantages.title": "为什么选择我们",
+                "advantages.subtitle": "多年跨境电商服务经验，专业团队为您提供全方位支持，让您的全球业务拓展之路更加顺畅",
+                "advantages.item1.title": "专业可靠",
+                "advantages.item1.desc": "多年行业经验，专业团队提供高效服务，确保每一项业务顺利完成",
+                "advantages.item2.title": "全球覆盖",
+                "advantages.item2.desc": "服务覆盖主流跨境电商市场，提供本地化解决方案，助力全球业务拓展",
+                "advantages.item3.title": "高效快捷",
+                "advantages.item3.desc": "简化流程，快速办理，缩短业务周期，让您尽快开展全球业务",
+                "advantages.item4.title": "全程支持",
+                "advantages.item4.desc": "从前期准备到后期运营，提供全程一对一服务，解决您的后顾之忧",
+                "services.title": "我们的服务",
+                "services.subtitle": "提供全方位跨境电商解决方案，助力您的业务走向全球",
+                "services.item1.title": "海外公司注册代办",
+                "services.item1.desc": "提供全球主要贸易地区的公司注册服务，包括美国、英国、欧盟、东南亚等地区，全程代办，快速高效。",
+                "services.item2.title": "跨境平台入驻代办",
+                "services.item2.desc": "协助入驻亚马逊、eBay、Wish、Shopee、Lazada等主流跨境电商平台，提供资料准备、审核指导等服务。",
+                "services.item3.title": "跨境物流渠道代理",
+                "services.item3.desc": "提供国际快递、专线物流、海外仓等多种物流解决方案，价格优惠，时效保障，全程跟踪。",
+                "services.item4.title": "收款账户开通代办",
+                "services.item4.desc": "协助开通全球收款账户，包括PayPal、WorldFirst、Payoneer等，解决跨境收款难题，降低手续费。",
+                "services.item5.title": "卖家培训+社群运营",
+                "services.item5.desc": "提供平台运营技巧、选品策略、营销推广等培训课程，建立卖家社群，共享资源与经验。",
+                "services.item6.title": "其他增值服务",
+                "services.item6.desc": "提供商标注册、VAT税务登记、产品认证、店铺代运营等增值服务，满足您的多样化需求。",
+                "services.learnMore": "了解更多",
+                "about.title": "关于我们",
+                "about.teamDesc": "专业团队，多年跨境电商服务经验",
+                "about.p1": "GlobalEcom Services 是一家专注于为跨境电商卖家提供全方位服务的专业机构。我们拥有一支经验丰富的团队，熟悉全球主要电商市场的规则和运营模式。",
+                "about.p2": "自成立以来，我们已帮助数千家企业成功拓展海外市场，提供从公司注册、平台入驻到物流配送、收款结算的一站式解决方案，让跨境电商业务变得简单高效。",
+                "about.stats.clients": "服务客户",
+                "about.stats.years": "行业经验",
+                "about.stats.countries": "覆盖国家",
+                "about.stats.satisfaction": "客户满意度",
+                "about.cta": "联系我们",
+                "contact.title": "联系我们",
+                "contact.subtitle": "无论您有任何疑问或需求，都可以通过以下方式联系我们，我们将尽快回复您",
+                "contact.formTitle": "发送消息",
+                "contact.name": "姓名",
+                "contact.email": "邮箱",
+                "contact.service": "感兴趣的服务",
+                "contact.selectService": "请选择服务类型",
+                "contact.message": "留言",
+                "contact.send": "发送消息",
+                "contact.contactInfo": "联系方式",
+                "contact.wechat": "微信",
+                "contact.telegram": "Telegram",
+                "contact.workingHours": "工作时间",
+                "contact.mondayToFriday": "周一至周五",
+                "contact.saturday": "周六",
+                "contact.sunday": "周日",
+                "contact.closed": "休息",
+                "contact.responseTime": "我们通常会在24小时内回复您的咨询",
+                "contact.success": "您的消息已成功发送，我们将尽快回复您！",
+                "footer.desc": "专业的跨境电商一站式服务提供商，助力您的业务拓展全球市场。",
+                "footer.services": "服务",
+                "footer.quickLinks": "快速链接",
+                "footer.contact": "联系我们",
+                "footer.copyright": "© 2023 GlobalEcom Services. 保留所有权利。",
+                "footer.privacy": "隐私政策",
+                "footer.terms": "服务条款"
+            },
+            en: {
+                "logo": "GlobalEcom Services",
+                "nav.home": "Home",
+                "nav.services": "Services",
+                "nav.about": "About Us",
+                "nav.contact": "Contact",
+                "hero.title1": "One-Stop Cross-Border",
+                "hero.title2": "E-Commerce Solutions",
+                "hero.subtitle": "We provide professional overseas company registration, platform entry, logistics channels, payment account opening, and seller training services to help you easily expand into global markets.",
+                "hero.cta1": "Explore Services",
+                "hero.cta2": "Contact Us",
+                "advantages.title": "Why Choose Us",
+                "advantages.subtitle": "Years of cross-border e-commerce service experience, professional team provides comprehensive support to make your global business expansion smoother",
+                "advantages.item1.title": "Professional & Reliable",
+                "advantages.item1.desc": "Years of industry experience, professional team provides efficient services to ensure the smooth completion of each business",
+                "advantages.item2.title": "Global Coverage",
+                "advantages.item2.desc": "Services cover mainstream cross-border e-commerce markets, providing localized solutions to help global business expansion",
+                "advantages.item3.title": "Efficient & Fast",
+                "advantages.item3.desc": "Simplify processes, handle quickly, shorten business cycles, allowing you to start global business as soon as possible",
+                "advantages.item4.title": "Full Support",
+                "advantages.item4.desc": "From pre-preparation to post-operation, provide one-on-one service throughout the process to solve your worries",
+                "services.title": "Our Services",
+                "services.subtitle": "Provide comprehensive cross-border e-commerce solutions to help your business go global",
+                "services.item1.title": "Overseas Company Registration",
+                "services.item1.desc": "Provide company registration services in major global trading regions, including the United States, the United Kingdom, the European Union, Southeast Asia, etc., fully agented, fast and efficient.",
+                "services.item2.title": "Cross-Border Platform Entry",
+                "services.item2.desc": "Assist in entering mainstream cross-border e-commerce platforms such as Amazon, eBay, Wish, Shopee, Lazada, providing document preparation and review guidance.",
+                "services.item3.title": "Cross-Border Logistics",
+                "services.item3.desc": "Provide various logistics solutions such as international express, dedicated line logistics, overseas warehouses, with preferential prices, time guarantee, and full tracking.",
+                "services.item4.title": "Payment Account Opening",
+                "services.item4.desc": "Assist in opening global payment accounts, including PayPal, WorldFirst, Payoneer, etc., to solve cross-border payment problems and reduce fees.",
+                "services.item5.title": "Seller Training & Community",
+                "services.item5.desc": "Provide training courses on platform operation skills, product selection strategies, marketing promotion, establish seller communities, and share resources and experiences.",
+                "services.item6.title": "Other Value-Added Services",
+                "services.item6.desc": "Provide value-added services such as trademark registration, VAT tax registration, product certification, and store operation on behalf, to meet your diverse needs.",
+                "services.learnMore": "Learn More",
+                "about.title": "About Us",
+                "about.teamDesc": "Professional team with years of cross-border e-commerce service experience",
+                "about.p1": "GlobalEcom Services is a professional organization focusing on providing comprehensive services for cross-border e-commerce sellers. We have an experienced team familiar with the rules and operation modes of major global e-commerce markets.",
+                "about.p2": "Since its establishment, we have helped thousands of enterprises successfully expand into overseas markets, providing one-stop solutions from company registration, platform entry to logistics distribution and payment settlement, making cross-border e-commerce business simple and efficient.",
+                "about.stats.clients": "Clients Served",
+                "about.stats.years": "Years Experience",
+                "about.stats.countries": "Countries Covered",
+                "about.stats.satisfaction": "Satisfaction Rate",
+                "about.cta": "Contact Us",
+                "contact.title": "Contact Us",
+                "contact.subtitle": "No matter what questions or needs you have, you can contact us through the following methods, and we will reply to you as soon as possible",
+                "contact.formTitle": "Send Message",
+                "contact.name": "Name",
+                "contact.email": "Email",
+                "contact.service": "Interested Service",
+                "contact.selectService": "Please select service type",
+                "contact.message": "Message",
+                "contact.send": "Send Message",
+                "contact.contactInfo": "Contact Information",
+                "contact.wechat": "WeChat",
+                "contact.telegram": "Telegram",
+                "contact.workingHours": "Working Hours",
+                "contact.mondayToFriday": "Monday to Friday",
+                "contact.saturday": "Saturday",
+                "contact.sunday": "Sunday",
+                "contact.closed": "Closed",
+                "contact.responseTime": "We usually reply to your inquiry within 24 hours",
+                "contact.success": "Your message has been sent successfully, we will reply to you as soon as possible!",
+                "footer.desc": "Professional one-stop service provider for cross-border e-commerce, helping your business expand into global markets.",
+                "footer.services": "Services",
+                "footer.quickLinks": "Quick Links",
+                "footer.contact": "Contact Us",
+                "footer.copyright": "© 2023 GlobalEcom Services. All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service"
+            }
+        };
+
+        // 当前语言
+        let currentLang = 'zh';
+
+        // 切换语言
+        function changeLanguage(lang) {
+            if (lang === currentLang) return;
+            
+            currentLang = lang;
+            
+            // 更新所有带data-i18n属性的元素
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            // 更新语言按钮样式
+            document.querySelectorAll('[data-lang]').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+                    btn.classList.add('bg-primary', 'text-white');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('bg-gray-200', 'hover:bg-gray-300');
+                }
+            });
+        }
+
+        // 导航栏滚动效果
+        function handleNavbarScroll() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-lg');
+                navbar.classList.remove('py-4', 'shadow-md');
+            } else {
+                navbar.classList.add('py-4', 'shadow-md');
+                navbar.classList.remove('py-2', 'shadow-lg');
+            }
+            
+            // 控制回到顶部按钮显示
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        }
+
+        // 平滑滚动
+        function smoothScroll(targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // 关闭移动菜单
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
+        }
+
+        // 表单提交处理
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // 在实际应用中，这里会有AJAX请求发送表单数据到服务器
+            // 这里仅做模拟
+            const successMessage = document.getElementById('success-message');
+            
+            // 显示成功消息
+            successMessage.classList.remove('opacity-0', 'invisible');
+            successMessage.classList.add('opacity-100', 'visible');
+            
+            // 3秒后隐藏成功消息
+            setTimeout(() => {
+                successMessage.classList.add('opacity-0', 'invisible');
+                successMessage.classList.remove('opacity-100', 'visible');
+            }, 3000);
+            
+            // 重置表单
+            e.target.reset();
+        }
+
+        // 初始化事件监听
+        function initEventListeners() {
+            // 语言切换按钮
+            document.getElementById('lang-zh').addEventListener('click', () => changeLanguage('zh'));
+            document.getElementById('lang-en').addEventListener('click', () => changeLanguage('en'));
+            document.getElementById('mobile-lang-zh').addEventListener('click', () => changeLanguage('zh'));
+            document.getElementById('mobile-lang-en').addEventListener('click', () => changeLanguage('en'));
+            
+            // 移动菜单切换
+            document.getElementById('menu-toggle').addEventListener('click', () => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 导航链接点击
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    if (targetId) {
+                        smoothScroll(targetId);
+                    }
+                });
+            });
+            
+            // 回到顶部按钮
+            document.getElementById('back-to-top').addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 表单提交
+            document.getElementById('contact-form').addEventListener('submit', handleFormSubmit);
+            
+            // 滚动事件
+            window.addEventListener('scroll', handleNavbarScroll);
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            initEventListeners();
+            handleNavbarScroll(); // 初始化导航栏状态
+        });
+    </script>
+</body>
+</html>
