@@ -7,13 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
+        // 配置Tailwind
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E40AF', // 深蓝色作为主色调，代表专业和信任
-                        secondary: '#3B82F6', // 中蓝色作为辅助色
-                        accent: '#F97316', // 橙色作为强调色，代表活力和国际化
+                        primary: '#1E40AF',
+                        secondary: '#3B82F6',
+                        accent: '#F97316',
                         dark: '#1E293B',
                         light: '#F8FAFC'
                     },
@@ -47,7 +48,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
-                <a href="#" class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                         <i class="fa fa-globe text-white text-xl"></i>
                     </div>
@@ -56,10 +57,10 @@
                 
                 <!-- 桌面导航 -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
-                    <a href="#services" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
-                    <a href="#about" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
-                    <a href="#contact" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
+                    <a href="index.html#home" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
+                    <a href="index.html#services" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
+                    <a href="index.html#about" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
+                    <a href="index.html#contact" class="font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
                     
                     <!-- 语言切换 -->
                     <div class="flex items-center space-x-2">
@@ -78,10 +79,10 @@
         <!-- 移动端导航菜单 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="container mx-auto px-4 py-3 space-y-3">
-                <a href="#home" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
-                <a href="#services" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
-                <a href="#about" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
-                <a href="#contact" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
+                <a href="index.html#home" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.home">首页</a>
+                <a href="index.html#services" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.services">服务</a>
+                <a href="index.html#about" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.about">关于我们</a>
+                <a href="index.html#contact" class="block py-2 font-medium text-dark hover:text-primary transition-custom" data-i18n="nav.contact">联系我们</a>
                 <div class="flex items-center space-x-2 pt-2 border-t">
                     <button id="mobile-lang-zh" class="px-3 py-1 rounded-md bg-primary text-white" data-lang="zh">中</button>
                     <button id="mobile-lang-en" class="px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 transition-custom" data-lang="en">En</button>
@@ -101,10 +102,10 @@
                         </h1>
                         <p class="text-lg text-gray-600 mb-8" data-i18n="hero.subtitle">我们提供专业的海外公司注册、平台入驻、物流渠道、收款账户开通及卖家培训服务，助您轻松拓展全球市场。</p>
                         <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                            <a href="#services" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-custom text-center">
+                            <a href="index.html#services" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-custom text-center">
                                 <i class="fa fa-rocket mr-2"></i><span data-i18n="hero.cta1">了解服务</span>
                             </a>
-                            <a href="#contact" class="px-8 py-3 bg-white hover:bg-gray-50 text-primary border border-primary font-medium rounded-lg shadow-md hover:shadow-lg transition-custom text-center">
+                            <a href="index.html#contact" class="px-8 py-3 bg-white hover:bg-gray-50 text-primary border border-primary font-medium rounded-lg shadow-md hover:shadow-lg transition-custom text-center">
                                 <i class="fa fa-envelope mr-2"></i><span data-i18n="hero.cta2">联系我们</span>
                             </a>
                         </div>
@@ -118,6 +119,8 @@
                 </div>
             </div>
         </section>
+        
+        <!-- 其他部分保持不变 -->
         <!-- 服务优势 -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -165,6 +168,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- 服务内容 -->
         <section id="services" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,7 +191,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item1.title">海外公司注册代办</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item1.desc">提供全球主要贸易地区的公司注册服务，包括美国、英国、欧盟、东南亚等地区，全程代办，快速高效。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -207,7 +211,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item2.title">VAT / GST 税号办理</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item2.desc">专业办理欧盟、英国、澳洲等国家和地区的增值税税号，确保合规经营，避免税务风险。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -227,7 +231,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item3.title">EPR 环保注册</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item3.desc">代办欧盟、法国、德国等地区的EPR环保注册，满足产品回收和环保要求，确保市场准入合规。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -247,7 +251,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item4.title">商标注册</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item4.desc">提供全球主要市场的商标注册服务，保护品牌权益，提升品牌价值，避免侵权风险。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -267,7 +271,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item5.title">美国MSB等牌照办理</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item5.desc">专业办理美国MSB金融牌照及其他国家地区相关牌照，满足跨境支付和金融业务合规要求。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -287,7 +291,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item6.title">跨境平台入驻代办</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item6.desc">协助入驻亚马逊、eBay、Wish、Shopee、Lazada等主流跨境电商平台，提供资料准备、审核指导等服务。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -307,7 +311,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item7.title">跨境物流渠道代理</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item7.desc">提供国际快递、专线物流、海外仓等多种物流解决方案，价格优惠，时效保障，全程跟踪。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -327,7 +331,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item8.title">收款账户开通代办</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item8.desc">协助开通全球收款账户，包括PayPal、WorldFirst、Payoneer等，解决跨境收款难题，降低手续费。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -347,7 +351,7 @@
                                 <h3 class="text-xl font-semibold" data-i18n="services.item9.title">卖家培训+社群运营</h3>
                             </div>
                             <p class="text-gray-600 mb-4" data-i18n="services.item9.desc">提供平台运营技巧、选品策略、营销推广等培训课程，建立卖家社群，共享资源与经验。</p>
-                            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
+                            <a href="index.html#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center transition-custom">
                                 <span data-i18n="services.learnMore">了解更多</span>
                                 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
                             </a>
@@ -356,6 +360,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- 关于我们 -->
         <section id="about" class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -401,7 +406,7 @@
                             </div>
                         </div>
                         
-                        <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-custom">
+                        <a href="index.html#contact" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-custom">
                             <span data-i18n="about.cta">联系我们</span>
                             <i class="fa fa-arrow-right ml-2"></i>
                         </a>
@@ -409,7 +414,8 @@
                 </div>
             </div>
         </section>
-        <!-- 联系我们（已嵌入第三方表单） -->
+        
+        <!-- 联系我们 -->
         <section id="contact" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -420,7 +426,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
                         <div class="bg-white rounded-xl shadow-lg p-8 h-full">
-                            <!-- 第三方平台表单（已修复为HTTPS协议） -->
+                            <!-- 第三方平台表单 -->
                             <script charset="UTF-8" defer>(function(m){function n(b){return null===b?null:b.scrollHeight>b.clientHeight?b:n(b.parentNode)}function u(b){if(b.data&&"[object String]"==Object.prototype.toString.call(b.data)){var e={};try{e=JSON.parse(b.data)}catch(v){}!e.height||p||q||(d.style.height=+e.height+"px");if(e.getter){b={};e=[].concat(e.getter);var k,w=e.length;for(k=0;k<w;k++){var r=k;var c=e[k]||{};c.n&&(r=c.n);var g=null;try{switch(c.t){case "window":var f=window;break;case "scrollParent":f=n(a)||window;break;default:f=a}if(c.e)if("rect"===c.v){g={};var l=f.getBoundingClientRect();g={top:l.top,left:l.left,width:l.width,height:l.height}}else g=f[c.v].apply(f,[].concat(c.e))||!0;else c.s?(f[c.v]=c.s,g=!0):g=f[c.v]||!1}catch(v){}b[r]=g}b.innerState=!p&&!q;a.contentWindow.postMessage(JSON.stringify({queryRes:b}),"*")}}}for(var t=m.document,h=t.documentElement;h.childNodes.length&&1==h.lastChild.nodeType;)h=h.lastChild;var d=h.parentNode,a=t.createElement("iframe");d.style.overflowY="auto";d.style.overflowX="hidden";var p=d.style.height&&"auto"!==d.style.height,q="absolute"===d.style.position||window.getComputedStyle&&"absolute"===window.getComputedStyle(d,null).getPropertyValue("position")||d.currentStyle&&"absolute"===d.currentStyle.position;m.addEventListener&&m.addEventListener("message",u,!1);a.src="https://xiaoyuan100.mikecrm.com/3eEGmgR";a.id="mkin3eEGmgR";a.onload=function(){a.contentWindow.postMessage(JSON.stringify({cif:1}),"*")};a.frameBorder=0;a.scrolling="no";a.style.display="block";a.style.minWidth="100%";a.style.width="100px";a.style.height="100%";a.style.border="none";a.style.overflow="auto";d.insertBefore(a,h)})(window);</script>
                         </div>
                     </div>
@@ -482,6 +488,7 @@
             </div>
         </section>
     </main>
+    
     <!-- 页脚 -->
     <footer class="bg-dark text-white pt-16 pb-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -513,25 +520,25 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-6" data-i18n="footer.services">服务</h4>
                     <ul class="space-y-3">
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item1.title">海外公司注册代办</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item2.title">VAT / GST 税号办理</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item3.title">EPR 环保注册</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item4.title">商标注册</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item5.title">美国MSB等牌照办理</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item6.title">跨境平台入驻代办</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item7.title">跨境物流渠道代理</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item8.title">收款账户开通代办</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item9.title">卖家培训+社群运营</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item1.title">海外公司注册代办</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item2.title">VAT / GST 税号办理</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item3.title">EPR 环保注册</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item4.title">商标注册</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item5.title">美国MSB等牌照办理</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item6.title">跨境平台入驻代办</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item7.title">跨境物流渠道代理</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item8.title">收款账户开通代办</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="services.item9.title">卖家培训+社群运营</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-6" data-i18n="footer.quickLinks">快速链接</h4>
                     <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.home">首页</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.services">服务</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.about">关于我们</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.contact">联系我们</a></li>
+                        <li><a href="index.html#home" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.home">首页</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.services">服务</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.about">关于我们</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-custom" data-i18n="nav.contact">联系我们</a></li>
                     </ul>
                 </div>
                 
@@ -565,10 +572,12 @@
             </div>
         </div>
     </footer>
+    
     <!-- 回到顶部按钮 -->
     <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
         <i class="fa fa-arrow-up"></i>
     </button>
+    
     <!-- 语言切换与交互脚本 -->
     <script>
         // 语言翻译数据
@@ -626,14 +635,8 @@
                 "about.cta": "联系我们",
                 "contact.title": "联系我们",
                 "contact.subtitle": "无论您有任何疑问或需求，都可以通过以下方式联系我们，我们将尽快回复您",
-                "contact.formTitle": "发送消息",
-                "contact.name": "姓名",
-                "contact.email": "邮箱",
-                "contact.service": "感兴趣的服务",
-                "contact.selectService": "请选择服务类型",
-                "contact.message": "留言",
-                "contact.send": "发送消息",
                 "contact.contactInfo": "联系方式",
+                "contact.email": "邮箱",
                 "contact.wechat": "微信",
                 "contact.telegram": "Telegram",
                 "contact.workingHours": "工作时间",
@@ -642,7 +645,6 @@
                 "contact.sunday": "周日",
                 "contact.closed": "休息",
                 "contact.responseTime": "我们通常会在24小时内回复您的咨询",
-                "contact.success": "您的消息已成功发送，我们将尽快回复您！",
                 "footer.desc": "专业的跨境电商一站式服务提供商，助力您的业务拓展全球市场。",
                 "footer.services": "服务",
                 "footer.quickLinks": "快速链接",
@@ -704,14 +706,8 @@
                 "about.cta": "Contact Us",
                 "contact.title": "Contact Us",
                 "contact.subtitle": "No matter what questions or needs you have, you can contact us through the following methods, and we will reply to you as soon as possible",
-                "contact.formTitle": "Send Message",
-                "contact.name": "Name",
-                "contact.email": "Email",
-                "contact.service": "Interested Service",
-                "contact.selectService": "Please select service type",
-                "contact.message": "Message",
-                "contact.send": "Send Message",
                 "contact.contactInfo": "Contact Information",
+                "contact.email": "Email",
                 "contact.wechat": "WeChat",
                 "contact.telegram": "Telegram",
                 "contact.workingHours": "Working Hours",
@@ -720,7 +716,6 @@
                 "contact.sunday": "Sunday",
                 "contact.closed": "Closed",
                 "contact.responseTime": "We usually reply to your inquiry within 24 hours",
-                "contact.success": "Your message has been sent successfully, we will reply to you as soon as possible!",
                 "footer.desc": "Professional one-stop service provider for cross-border e-commerce, helping your business expand into global markets.",
                 "footer.services": "Services",
                 "footer.quickLinks": "Quick Links",
@@ -730,8 +725,10 @@
                 "footer.terms": "Terms of Service"
             }
         };
+        
         // 当前语言
         let currentLang = 'zh';
+        
         // 切换语言
         function changeLanguage(lang) {
             if (lang === currentLang) return;
@@ -757,6 +754,7 @@
                 }
             });
         }
+        
         // 导航栏滚动效果
         function handleNavbarScroll() {
             const navbar = document.getElementById('navbar');
@@ -778,6 +776,7 @@
                 backToTop.classList.remove('opacity-100', 'visible');
             }
         }
+        
         // 平滑滚动
         function smoothScroll(targetId) {
             const targetElement = document.getElementById(targetId);
@@ -791,6 +790,7 @@
                 document.getElementById('mobile-menu').classList.add('hidden');
             }
         }
+        
         // 初始化事件监听
         function initEventListeners() {
             // 语言切换按钮
@@ -806,10 +806,10 @@
             });
             
             // 导航链接点击
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            document.querySelectorAll('a[href^="index.html#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
+                    const targetId = this.getAttribute('href').split('#')[1];
                     if (targetId) {
                         smoothScroll(targetId);
                     }
@@ -827,6 +827,7 @@
             // 滚动事件
             window.addEventListener('scroll', handleNavbarScroll);
         }
+        
         // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', () => {
             initEventListeners();
