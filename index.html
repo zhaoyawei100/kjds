@@ -423,6 +423,51 @@
                 </div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- 左侧：联系方式，包含微信二维码 -->
+                    <div>
+                        <div class="bg-white rounded-xl shadow-lg p-8 h-full">
+                            <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.contactInfo">联系方式</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                        <i class="fa fa-envelope text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.email">邮箱</h4>
+                                        <p class="text-gray-600"><a href="mailto:452231850@qq.com" class="text-primary hover:underline">452231850@qq.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                        <i class="fa fa-telegram text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.telegram">Telegram</h4>
+                                        <p class="text-gray-600"><a href="https://t.me/willton100" target="_blank" class="text-primary hover:underline">https://t.me/willton100</a></p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                        <i class="fa fa-weixin text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.wechat">微信</h4>
+                                        <p class="text-gray-600">452231850</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 微信二维码 - 居中展示 -->
+                                <div class="mt-8 text-center">
+                                    <h4 class="font-medium text-gray-900 mb-3" data-i18n="contact.wechatQrCode">微信扫码添加好友</h4>
+                                    <div class="border-4 border-gray-100 rounded-lg inline-block p-2 shadow-md mx-auto">
+                                        <img src="https://raw.githubusercontent.com/zhaoyawei100/taluo/refs/heads/main/erweima.jpg" alt="微信二维码" class="w-48 h-48 object-contain">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧：发送消息表单 -->
                     <div>
                         <div class="bg-white rounded-xl shadow-lg p-8 h-full">
                             <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.formTitle">发送消息</h3>
@@ -458,41 +503,6 @@
                                     <i class="fa fa-paper-plane mr-2"></i><span data-i18n="contact.send">发送消息</span>
                                 </button>
                             </form>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
-                            <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.contactInfo">联系方式</h3>
-                            <div class="space-y-6">
-                                <div class="flex items-start">
-                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                        <i class="fa fa-envelope text-primary text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.email">邮箱</h4>
-                                        <p class="text-gray-600"><a href="mailto:452231850@qq.com" class="text-primary hover:underline">452231850@qq.com</a></p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                        <i class="fa fa-telegram text-primary text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.telegram">Telegram</h4>
-                                        <p class="text-gray-600"><a href="https://t.me/willton100" target="_blank" class="text-primary hover:underline">https://t.me/willton100</a></p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                        <i class="fa fa-weixin text-primary text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-gray-900 mb-1" data-i18n="contact.wechat">微信</h4>
-                                        <p class="text-gray-600">452231850</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -565,7 +575,8 @@
                 "contact.send": "发送消息",
                 "contact.contactInfo": "联系方式",
                 "contact.telegram": "Telegram",
-                "contact.wechat": "微信"
+                "contact.wechat": "微信",
+                "contact.wechatQrCode": "微信扫码添加好友"
             },
             en: {
                 "logo": "GlobalEcom Services",
@@ -629,7 +640,8 @@
                 "contact.send": "Send Message",
                 "contact.contactInfo": "Contact Information",
                 "contact.telegram": "Telegram",
-                "contact.wechat": "WeChat"
+                "contact.wechat": "WeChat",
+                "contact.wechatQrCode": "Scan WeChat QR Code to add friend"
             }
         };
 
@@ -757,3 +769,4 @@
     </script>
 </body>
 </html>
+    
